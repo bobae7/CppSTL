@@ -730,10 +730,128 @@ namespace S4_21
     }
 }
 #pragma endregion Sample 4-21
+#pragma region S4_22
+namespace S4_22
+{
+    template<typename RetType, typename ArgType>
+    class Functor
+    {
+    public:
+        RetType operator()(ArgType data)
+        {
+            cout << data << endl;
+            return RetType();
+        }
+    };
+
+    int main(void)
+    {
+        Functor<void, int> functor1;
+        functor1(10);
+        Functor<bool, string> functor2;
+        functor2("Hello!");
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Sample 4-22
+#pragma region S4_23
+namespace S4_23
+{
+    template<typename T1, typename T2>
+    struct Pair
+    {
+        T1 first;
+        T2 second;
+        Pair(const T1& ft, const T2& sd) :first(ft), second(sd) { }
+    };
+
+    int main(void)
+    {
+        Pair<int, int> p1(10, 20);
+        cout << p1.first << ',' << p1.second << endl;
+        Pair<int, string> p2(1, "one");
+        cout << p2.first << ',' << p2.second << endl;
+        cout << endl;
+        pair<int, int> p3(10, 20);
+        cout << p3.first << ',' << p3.second << endl;
+        pair<int, string> p4(1, "one");
+        cout << p4.first << ',' << p4.second << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Sample 4-23
+#pragma region E4_1
+namespace E4_1
+{
+    class MyType { };
+
+    template<typename T>
+    void Copy(T t[], T s[], int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            t[i] = s[i];
+        }
+    }
+
+    int main(void)
+    {
+        int arr1[5] = { 10, 20, 30, 40, 50 };
+        int arr2[5];
+        // Copy(t, s, n) t:格利瘤林家, s:家胶林家, n:盔家 俺荐
+        Copy(arr2, arr1, 5);
+        MyType myArr1[5];
+        MyType myArr2[5];
+        Copy(myArr2, myArr1, 5);
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Excercise 4-1
+#pragma region E4_2
+namespace E4_2
+{
+    template<typename T>
+    class Stack
+    {
+        T buf[100];
+        int top;
+    public:
+        Stack() :top(0) { }
+        void Push(const T& data) { buf[top++] = data; }
+        const T& Pop() { return buf[--top]; }
+        bool Empty() const { return top <= 0; }
+    };
+
+    int main(void)
+    {
+        Stack<int> st;
+        st.Push(10);
+        st.Push(20);
+        st.Push(30);
+
+        if (!st.Empty())
+            cout << st.Pop() << endl;
+        if (!st.Empty())
+            cout << st.Pop() << endl;
+        if (!st.Empty())
+            cout << st.Pop() << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Excercise E-2
 
 int main(void)
 {
-    S4_21::main();
+    //S4_23::main();
+    E4_2::main();
 }
 
 /*

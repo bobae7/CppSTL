@@ -847,11 +847,47 @@ namespace E4_2
     }
 }
 #pragma endregion Excercise E-2
+#pragma region E4_3
+namespace E4_3
+{
+    template<typename T>
+    class Queue
+    {
+        enum { CAP = 100 };
+        T buf[CAP];
+        int front;
+        int rear;
+    public:
+        Queue() :front(0), rear(0) { }
+        void Push(const T& data) { buf[rear = (rear + 1) % CAP] = data; }
+        const T& Pop() { return buf[front = (front + 1) % CAP]; }
+        bool Empty() { return rear == front; }
+    };
+
+    int main(void)
+    {
+        Queue<int> q;
+        q.Push(10);
+        q.Push(20);
+        q.Push(30);
+
+        if (!q.Empty())
+            cout << q.Pop() << endl;
+        if (!q.Empty())
+            cout << q.Pop() << endl;
+        if (!q.Empty())
+            cout << q.Pop() << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Excercise 4-3
 
 int main(void)
 {
     //S4_23::main();
-    E4_2::main();
+    E4_3::main();
 }
 
 /*

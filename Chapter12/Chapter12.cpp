@@ -267,11 +267,110 @@ namespace S12_8
     }
 }
 #pragma endregion Sample 12-8
+#pragma region S12_9
+namespace S12_9
+{
+    int main(void)
+    {
+        string t("ABC");
+
+        string s1("Hello!");
+        string s2("Hello!");
+        string s3("Hello!");
+        string s4("Hello!");
+        string s5("Hello!");
+        string s6("Hello!");
+        string s7("Hello!");
+        string s8("Hello!");
+        string s9("Hello!");
+        string s10("Hello!");
+
+        s1.replace(0, 3, "ABC");
+        s2.replace(0, 3, t);
+        s3.replace(0, 3, "ABC", 2);
+        s4.replace(0, 3, t, 0, 2);
+
+        s5.replace(0, 3, 2, 'A');
+
+        s6.replace(s6.begin(), s6.begin() + 3, "ABC");
+        s7.replace(s7.begin(), s7.begin() + 3, t);
+        s8.replace(s8.begin(), s8.begin() + 3, "ABC", 2);
+        s9.replace(s9.begin(), s9.begin() + 3, 3, 'A');
+        s10.replace(s10.begin(), s10.end(), t.begin(), t.end());
+
+        //s:string객체,sz:'\0'문자열,c:문자,pos:위치,n:길이,ct:개수,iterb:시작반복자,itere:끝반복자
+        cout << "s1.replace(pos, n, sz): " << s1 << endl;
+        cout << "s2.replace(pos, n, s): " << s2 << endl;
+        cout << "s3.replace(pos, n, sz, n2): " << s3 << endl;
+        cout << "s4.replace(pos, n, s, pos2, n2): " << s4 << endl;
+        cout << "s5.replace(pos, n, ct, c): " << s5 << endl;
+        cout << "s6.replace(iterb, itere, sz): " << s6 << endl;
+        cout << "s7.replace(iterb, itere, s): " << s7 << endl;
+        cout << "s8.replace(iterb, itere, sz, ct): " << s8 << endl;
+        cout << "s9.replace(iterb, itere, ct, c): " << s9 << endl;
+        cout << "s10.replace(iterb, itere, iterb2, itere2): " << s10 << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Sample 12-9
+#pragma region S12_10
+namespace S12_10
+{
+    int main(void)
+    {
+        string t("Hello!");
+        string s1, s2, s3, s4, s5;
+
+        s1 = t.substr(0);
+        s2 = t.substr(0, string::npos);
+
+        s3 = t.substr(0, 2);
+        s4 = t.substr(2, 3);
+        s5 = t.substr(2, string::npos);
+
+        cout << "substr(0)-0부터 끝까지: " << s1 << endl;
+        cout << "substr(0, npos)-0부터 끝까지: " << s2 << endl;
+        cout << "substr(0, 2)-0부터 2개: " << s3 << endl;
+        cout << "substr(2, 3)-2부터 3개: " << s4 << endl;
+        cout << "substr(2, npos)-2부터 끝까지: " << s5 << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Sample 12-10
+#pragma region S12_11
+namespace S12_11
+{
+    int main(void)
+    {
+        string s1, s2;
+
+
+        //cin >> buf와 같다.
+        //cout << "두 문자열 입력:"<<endl;
+        //cin >> s1 >> s2;
+        //cout <<"s1: "<< s1 <<"   s2: "<< s2 << endl;
+
+        //cin.getline(buf)과 같다.
+        cout << "두 문자열 입력(공백 문자 가능):" << endl;
+        getline(cin, s1);
+        getline(cin, s2, '\n');
+        cout << "s1: " << s1 << endl;
+        cout << "s2: " << s2 << endl;
+
+        system("pause");
+        return 0;
+    }
+}
+#pragma endregion Sample 12-11
 
 
 int main(void)
 {
-    S12_8::main();
+    S12_9::main();
 }
 
 /*

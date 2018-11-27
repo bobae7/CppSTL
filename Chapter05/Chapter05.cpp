@@ -25,7 +25,6 @@ namespace S5_1
         for (unsigned int i = 0; i < v.size(); i++)
             cout << v[i] << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -47,7 +46,6 @@ namespace S5_2
         for (iter = v.begin(); iter != v.end(); ++iter)
             cout << *iter << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -80,7 +78,6 @@ namespace S5_3
         vector<int>::iterator iter2 = iter + 2;
         cout << *iter2 << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -113,7 +110,6 @@ namespace S5_4
         deque<int>::iterator iter2 = iter + 2;
         cout << *iter2 << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -139,7 +135,6 @@ namespace S5_5
         if (iter == v.end())
             cout << "100이 없음!" << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -166,7 +161,6 @@ namespace S5_6
         sort(v.begin(), v.end());
         //sort(lt.begin(), lt.end());
 
-        system("pause");
         return 0;
     }
 }
@@ -193,7 +187,6 @@ namespace S5_7
             cout << *iter << " ";
         cout << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -217,9 +210,20 @@ namespace S5_8
         st.pop();
 
         if (st.empty())
+            cout << "stack에 데이터 없음" << endl << "=================" << endl << endl;
+
+        st.push(10);
+        st.push(20);
+        st.push(30);
+
+        while (!st.empty())
+        {
+            cout << st.top() << endl;
+            st.pop();
+        }
+        if (st.empty())
             cout << "stack에 데이터 없음" << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -243,9 +247,20 @@ namespace S5_9
         st.pop();
 
         if (st.empty())
+            cout << "stack에 데이터 없음" << endl << "=================" << endl << endl;
+
+        st.push(10);
+        st.push(20);
+        st.push(30);
+
+        while (!st.empty())
+        {
+            cout << st.top() << endl;
+            st.pop();
+        }
+        if (st.empty())
             cout << "stack에 데이터 없음" << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -275,7 +290,6 @@ namespace S5_10
             cout << *riter << " ";
         cout << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -304,7 +318,10 @@ namespace S5_11
             cout << *riter << " ";
         cout << endl;
 
-        system("pause");
+        for (vector<int>::reverse_iterator riter = v.rbegin(); riter != v.rend(); ++riter)
+            cout << *riter << " ";
+        cout << endl;
+
         return 0;
     }
 }
@@ -337,7 +354,6 @@ namespace S5_12
             cout << *riter << " ";
         cout << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -366,7 +382,6 @@ namespace S5_13
         cout << not2(l)(20, 10) << endl;
         cout << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -386,7 +401,6 @@ namespace S5_14
         s.insert(10);
         cout << *s.begin() << endl;
 
-        system("pause");
         return 0;
     }
 }
@@ -394,7 +408,10 @@ namespace S5_14
 
 int main(void)
 {
-    S5_14::main();
+    S5_11::main();
+
+    system("pause");
+    return 0;
 }
 
 /*

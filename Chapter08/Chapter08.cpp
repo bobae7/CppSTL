@@ -141,7 +141,7 @@ namespace S8_4
         cout << endl;
 
         // 구간 [v.begin(), v.end())에서 30 원소의 개수를 반환
-        int n = count(v.begin(), v.end(), 30);
+        int n = (int)count(v.begin(), v.end(), 30);
         cout << "30의 개수: " << n << endl;
 
         system("pause");

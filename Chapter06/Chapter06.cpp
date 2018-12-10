@@ -802,7 +802,7 @@ namespace S6_27
         deque<int> dq;
 
         for (deque<int>::size_type i = 0; i < 10; ++i)
-            dq.push_back((i + 1) * 10);
+            dq.push_back((int)((i + 1) * 10));
 
         for (deque<int>::size_type i = 0; i < dq.size(); ++i)
             cout << dq[i] << ' ';
@@ -1505,7 +1505,7 @@ namespace S6_45
 
 int main(void)
 {
-    S6_45::main();
+    S6_42::main();
 }
 
 /*

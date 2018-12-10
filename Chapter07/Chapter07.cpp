@@ -7,7 +7,7 @@ using namespace std;
 #pragma region S7_1
 namespace S7_1
 {
-    int main(void)
+    void main(void)
     {
         set<int> s; // 정수 원소를 저장하는 기본 정렬 기준이 less인 빈 컨테이너 생성
 
@@ -30,16 +30,13 @@ namespace S7_1
         for (iter = s.begin(); iter != s.end(); ++iter)
             cout << *iter << " "; // 결과는 같다.
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-1
 #pragma region S7_2
 namespace S7_2
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
 
@@ -69,16 +66,13 @@ namespace S7_2
         for (iter = s.begin(); iter != s.end(); ++iter)
             cout << *iter << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-2
 #pragma region S7_3
 namespace S7_3
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
         pair<set<int>::iterator, bool> pr;
@@ -102,16 +96,13 @@ namespace S7_3
         for (iter = s.begin(); iter != s.end(); ++iter)
             cout << *iter << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-3
 #pragma region S7_4
 namespace S7_4
 {
-    int main(void)
+    void main(void)
     {
         set<int, greater<int> > s; // 정렬 기준으로 greater<int> 조건자를 사용.
 
@@ -129,16 +120,13 @@ namespace S7_4
         for (iter = s.begin(); iter != s.end(); ++iter)
             cout << *iter << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-4
 #pragma region S7_5
 namespace S7_5
 {
-    int main(void)
+    void main(void)
     {
         set<int, less<int> > s_less; // set<int> s와 같습니다.
         set<int, greater<int> > s_greater; // 정렬 기준으로 greater<int> 조건자를 사용.
@@ -161,9 +149,6 @@ namespace S7_5
         cout << "key_compare type: " << typeid(s_greater.key_comp()).name() << endl;
         cout << "value_compare type: " << typeid(s_less.value_comp()).name() << endl;
         cout << "value_compare type: " << typeid(s_greater.value_comp()).name() << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-5
@@ -676,7 +661,10 @@ namespace S7_21
 
 int main(void)
 {
-    S7_17::main();
+    S7_5::main();
+
+    system("pause");
+    return 0;
 }
 
 /*

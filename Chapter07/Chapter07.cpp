@@ -155,7 +155,7 @@ namespace S7_5
 #pragma region S7_6
 namespace S7_6
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
 
@@ -174,16 +174,13 @@ namespace S7_6
 
         cout << "원소 50의 개수: " << s.count(50) << endl;
         cout << "원소 100의 개수: " << s.count(100) << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-6
 #pragma region S7_7
 namespace S7_7
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
 
@@ -205,16 +202,13 @@ namespace S7_7
             cout << *iter << "가 s에 있다!" << endl;
         else
             cout << "20이 s에 없다!" << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-7
 #pragma region S7_8
 namespace S7_8
 {
-    int main(void)
+    void main(void)
     {
         set<int, less<int> > s; // 정렬 기준 less
 
@@ -222,16 +216,13 @@ namespace S7_8
         cout << (!s.key_comp()(30, 50) && !s.key_comp()(50, 30)) << endl; //다르다
         // 30과 30의 비교
         cout << (!s.key_comp()(30, 30) && !s.key_comp()(30, 30)) << endl; //같다(equivalence)
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-8
 #pragma region S7_9
 namespace S7_9
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
 
@@ -262,16 +253,13 @@ namespace S7_9
             cout << "55가 s에 있음!" << endl;
         else
             cout << "55가 s에 없음!" << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-9
 #pragma region S7_10
 namespace S7_10
 {
-    int main(void)
+    void main(void)
     {
         set<int> s;
 
@@ -299,16 +287,13 @@ namespace S7_10
             cout << "55가 s에 있음!" << endl;
         else
             cout << "55가 s에 없음!" << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-10
 #pragma region S7_11
 namespace S7_11
 {
-    int main(void)
+    void main(void)
     {
         multiset<int> ms;
         multiset<int>::iterator iter;
@@ -326,16 +311,13 @@ namespace S7_11
         for (iter = ms.begin(); iter != ms.end(); ++iter)
             cout << *iter << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-11
 #pragma region S7_12
 namespace S7_12
 {
-    int main(void)
+    void main(void)
     {
         multiset<int> ms;
 
@@ -368,16 +350,13 @@ namespace S7_12
         for (iter = lower_iter; iter != upper_iter; ++iter)
             cout << *iter << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-12
 #pragma region S7_13
 namespace S7_13
 {
-    int main(void)
+    void main(void)
     {
         multiset<int> ms;
 
@@ -401,16 +380,13 @@ namespace S7_13
         for (iter = iter_pair.first; iter != iter_pair.second; ++iter)
             cout << *iter << " "; //[iter_pair.first, iter_pair.second) 구간의 순차열
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-13
 #pragma region S7_14
 namespace S7_14
 {
-    int main(void)
+    void main(void)
     {
         //key, value 모두 정수형인 컨테이너 생성
     //기본 정렬 기준 less
@@ -436,16 +412,13 @@ namespace S7_14
         for (iter = m.begin(); iter != m.end(); ++iter)
             cout << "(" << iter->first << ',' << iter->second << ")" << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-14
 #pragma region S7_15
 namespace S7_15
 {
-    int main(void)
+    void main(void)
     {
         map<int, int> m;
         pair<map<int, int>::iterator, bool> pr; // insert() 결과 pair 객체
@@ -468,16 +441,13 @@ namespace S7_15
             cout << "key: " << pr.first->first << ", value: " << pr.first->second << "저장 완료!" << endl;
         else
             cout << "key: 9가 이미 m에 있습니다." << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-15
 #pragma region S7_16
 namespace S7_16
 {
-    int main(void)
+    void main(void)
     {
         map<int, int> m;
 
@@ -499,16 +469,13 @@ namespace S7_16
         for (iter = m.begin(); iter != m.end(); ++iter)
             cout << "(" << iter->first << ',' << iter->second << ")" << " ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-16
 #pragma region S7_17
 namespace S7_17
 {
-    int main(void)
+    void main(void)
     {
         // greater 정렬 기준의 key:int, value:string 타입의 컨테니어 m 생성.
         map<int, string, greater<int> > m;
@@ -526,7 +493,6 @@ namespace S7_17
         //    cout << "(" << iter->first << ',' << iter->second << ")" << " ";
         cout << endl;
 
-
         //cout << m[9] << " "; //key와 매핑된 value를 출력합니다.
         //cout << m[8] << " ";
         //cout << m[7] << " ";
@@ -534,16 +500,13 @@ namespace S7_17
         //cout << m[4] << " ";
         //cout << m[3] << " ";
         //cout << m[1] << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-17
 #pragma region S7_18
 namespace S7_18
 {
-    int main(void)
+    void main(void)
     {
         map<int, int> m;
 
@@ -581,16 +544,13 @@ namespace S7_18
         for (iter = iter_pair.first; iter != iter_pair.second; ++iter)
             cout << "(" << iter->first << ',' << iter->second << ") ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-18
 #pragma region S7_20
 namespace S7_20
 {
-    int main(void)
+    void main(void)
     {
         multimap<int, int> mm;
 
@@ -612,16 +572,13 @@ namespace S7_20
         iter = mm.find(3);
         if (iter != mm.end())
             cout << "첫 번째 key 3에 매핑된 value: " << iter->second << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-20
 #pragma region S7_21
 namespace S7_21
 {
-    int main(void)
+    void main(void)
     {
         multimap<int, int> mm;
 
@@ -651,9 +608,6 @@ namespace S7_21
         for (iter = iter_pair.first; iter != iter_pair.second; ++iter)
             cout << "(" << iter->first << ',' << iter->second << ") ";
         cout << endl;
-
-        system("pause");
-        return 0;
     }
 }
 #pragma endregion Sample 7-21
@@ -661,7 +615,7 @@ namespace S7_21
 
 int main(void)
 {
-    S7_5::main();
+    S7_11::main();
 
     system("pause");
     return 0;
@@ -673,7 +627,7 @@ namespace S7_
 {
 
 
-    int main(void)
+    void main(void)
     {
 
 
